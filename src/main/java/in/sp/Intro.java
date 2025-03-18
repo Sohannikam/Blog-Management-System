@@ -40,12 +40,13 @@ public class Intro extends HttpServlet {
            if(session!=null)
            {
 
-           String q1=("select * from users where uemail=?");
+           String q1=("select * from users where UserID=?");
            PreparedStatement pstmt = con.prepareStatement(q1);
+           int InUserId = (Integer)session.getAttribute("userId");
           
            String loggedInUsername = (String)session.getAttribute("UEmail");
           
-           pstmt.setString(1, loggedInUsername);
+           pstmt.setInt(1, InUserId);
            
            
            ResultSet rs= pstmt.executeQuery();

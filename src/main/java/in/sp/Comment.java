@@ -4,6 +4,7 @@ import jakarta.servlet.RequestDispatcher;
 
 
 
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -49,7 +50,7 @@ public class Comment extends HttpServlet {
              // Redirect back to the manageUsers.jsp page after deletion
              if (AddComment) {
             	
-                 out.println("<script>alert('Comment Added Successfully!'); window.location.href='blogPost.jsp';</script>");
+                 out.println("<script>alert('Comment Added Successfully!'); window.location.href='index.jsp';</script>");
                 
              } else {
                  // Handle deletion failure (display an error message or redirect to an error page)
@@ -60,11 +61,11 @@ public class Comment extends HttpServlet {
         {
         	System.out.println("not fine");
         }
-        // Perform the user deletion logic
         
         
        
     }
+
 
     // User deletion logic
     private boolean Addcomment (int BlogId,String email2,String comment2,String createDate2) {

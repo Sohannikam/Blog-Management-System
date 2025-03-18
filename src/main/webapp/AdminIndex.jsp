@@ -27,20 +27,15 @@
             </div>
              <ul class="list-unstyled px-2">
                 <li class=""><a href="#AdminMainDashboard" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-gauge"></i> Admin Dashboard OverView</a></li>
-                <li class=""><a href="#BlogDelete" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-note-sticky"></i> Blog Post</a></li>
-                <li class=""><a href="#addNewPost" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-pen-to-square"></i>  Add New post</a></li>
-                <li class=""><a href="#manageComments" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-comments"></i> Manage Comments</a></li>
-                <li class=""><a href="#AdminManageUser" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-image-portrait"></i> Manage User</a></li>
+                <li class=""><a href="#" id="blogPostBtn" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-note-sticky"></i> Blog Post</a></li>
+                <li class=""><a href="#" id="manageuser" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-image-portrait"></i> Manage User</a></li>
                 <li class=""><a href="#AdminAaddNewCategory" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-plus"></i> Add New Category</a></li>
               
                
              </ul>
              <hr class="h-color mx-2">
 
-             <ul class="list-unstyled px-2">
-                <li class=""><a href="" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                <!-- <li class=""><a href="" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-bell"></i> Notification</a></li> -->
-             </ul>
+           
             
         </div>
 
@@ -81,21 +76,9 @@
         <!-- ...................... Loading Content dynamically ................  -->
 
         </div>
+        
     </div>
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
+      </div>
 
 
 
@@ -108,6 +91,41 @@
     
     <script src="./index.js "></script>
 <!-- Your custom script -->
+
+ <script>
+ $('#blogPostBtn').click(function(event) {
+     event.preventDefault(); // Prevent default anchor behavior
+     $.ajax({
+         url: 'AdminvBlog', // URL of the Blog Post servlet
+         method: 'GET',
+         success: function(response) {
+             // Load the response into the content area
+             $('#content-area').html(response); // Updated to match content area ID
+         },
+         error: function(xhr, status, error) {
+             console.error('Error fetching blog post data:', error);
+         }
+     });
+ });
+ </script>
+ 
+ <script>
+ $('#manageuser').click(function(event) {
+     event.preventDefault(); // Prevent default anchor behavior
+     $.ajax({
+         url: 'showusers', // URL of the Blog Post servlet
+         method: 'GET',
+         success: function(response) {
+             // Load the response into the content area
+             $('#content-area').html(response); // Updated to match content area ID
+         },
+         error: function(xhr, status, error) {
+             console.error('Error fetching blog post data:', error);
+         }
+     });
+ });
+
+</script>
 
 
 </body>

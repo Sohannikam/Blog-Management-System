@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +27,10 @@
                 <button class="btn d-md-none d-block close-btn px-1 py-0 text-white  "><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
              <ul class="list-unstyled px-2">
-                <li class=""><a href="#blogDashboard" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-gauge"></i> Blog Dashboard</a></li>
-                <li class=""><a href="#show" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-note-sticky"></i> Blog Post</a></li>
+                <li class=""><a href="<%= request.getContextPath() %>/indexblog1" class="nav-link text-decoration-none px-3 py-2 d-block"> <i class="fa-solid fa-gauge"></i> Blog Dashboard</a></li>
+
+                <li class=""><a href="#" id="blogPostBtn" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-note-sticky"></i> Blog Post</a></li>
+
                 <li class=""><a href="#addNewPost" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-pen-to-square"></i>  Add New post</a></li>
                 <li class=""><a href="#comments" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-comments"></i>  Comments</a></li>
               
@@ -36,7 +39,7 @@
              <hr class="h-color mx-2">
 
              <ul class="list-unstyled px-2">
-                <li class=""><a href="" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li class=""><a href="#setting" class="nav-link text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 <!-- <li class=""><a href="" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-bell"></i> Notification</a></li> -->
              </ul>
             
@@ -80,7 +83,7 @@
               <!-- ............. Dashbaord upper Navbar Ends Here ................  -->
 
 
-              <div class="dashboard-content px-3 pt-4 " id="content-area">
+              <div class="dashboard-content px-3 pt-4 " id="content-area" >
                   <!-- dashboard content area  -->
         <!-- ...................... Loading Content dynamically ................  -->
 
@@ -99,6 +102,57 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Your custom script -->
+
+<script>
+      /*   $(document).ready(function() {
+            $('#blogDashboardBtn').click(function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                $.ajax({
+                    url: 'indexblog1', // URL of the servlet
+                    method: 'GET',
+                    success: function(response) {
+                        // Load the response into the blogContent div
+                        $('#blogContent').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching blog data:', error);
+                    }
+                });
+            });
+        }); */
+        
+        $('#blogPostBtn').click(function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            $.ajax({
+                url: 'viewblog', // URL of the Blog Post servlet
+                method: 'GET',
+                success: function(response) {
+                    // Load the response into the content area
+                    $('#content-area').html(response); // Updated to match content area ID
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching blog post data:', error);
+                }
+            });
+        });
+   
+    </script>
+    
+      <!-- Script to load the profile content -->
+    <script>
+        function loadEditProfile() {
+            $.ajax({
+                url: 'Edit_profile.jsp', // URL of the JSP page for managing profile
+                method: 'GET',
+                success: function(response) {
+                    $('#profileContent').html(response); // Inject the profile edit form into the div
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading profile content:', error);
+                }
+            });
+        }
+    </script>
     
 <script src="./index1.js"></script>
 </body>

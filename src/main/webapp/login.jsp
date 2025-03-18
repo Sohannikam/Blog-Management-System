@@ -40,13 +40,10 @@
                                     
                                 </div>
                                 <div class="d-flex justify-content-end form-group">
-                                    <a href="forgotPassword.jsp">Forgot Password</a>
+                                    <a href="Home.jsp">Back to Home</a>
                                     <a href="Signup.jsp" class="signup-image-link ms-3">Create an account</a>
                                 </div>
-                                   <div class="d-flex justify-content-end form-group">
-                                    <a href="Home.jsp" class="text-secondary"  style="text-decoration: none;">Back to Home</a>
-                                    
-                                </div>
+                                   
                             </form>
                         </div>
                     </div>

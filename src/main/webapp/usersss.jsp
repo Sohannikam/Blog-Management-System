@@ -48,14 +48,7 @@
 </head>
 <body>
 
- <div class="container-fluid">
-        <div class="container">
-            <!-- Add a Go to Main Page button -->
-            <div class="text-end">
-                <a href="AdminIndex.jsp" class="btn btn-success"><b>Go to Main Page</b></a>
-            </div>
-        </div>
-    </div>
+
 <h2>User Information</h2>
 
 <%

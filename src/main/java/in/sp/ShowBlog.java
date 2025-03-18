@@ -3,6 +3,8 @@ package in.sp;
 import jakarta.servlet.RequestDispatcher;
 
 
+
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -47,10 +49,13 @@ public class ShowBlog extends HttpServlet {
            if(session!=null )
         	   
            {
-        	  
         	   
-           String q1=("SELECT * FROM blog");
-           PreparedStatement pstmt = con.prepareStatement(q1);
+        	   String q1=("select * from blog where userid=?");
+               PreparedStatement pstmt = con.prepareStatement(q1);
+              
+               int loggedInUserId = (Integer)session.getAttribute("userId");
+              
+               pstmt.setInt(1, loggedInUserId);
            
        
            ResultSet rs = pstmt.executeQuery();

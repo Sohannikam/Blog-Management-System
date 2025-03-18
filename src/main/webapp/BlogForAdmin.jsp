@@ -42,35 +42,16 @@
     </style>
 </head>
 <body>
+ 
     <div class="container-fluid">
-        <div class="container">
-            <!-- Add a Go to Main Page button -->
-            <div class="text-end">
-                <a href="AdminIndex.jsp" class="btn btn-success">Go to Main Page</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Top Panel -->
-            <div class="col-md-12 custom-panel-top">
-                <!-- Add your top panel content here -->
-                <h2>Explore Your Blogs</h2>
-                <!-- Add whatever content you want in the top panel -->
-            </div>
-        </div>
+        
 
         <div class="row">
             <!-- Left Side Panel -->
-            <div class="col-md-2 custom-panel custom-panel-left">
-                <!-- Add your left side panel content here -->
-                <h4></h4>
-                <!-- Add whatever content you want in the left side panel -->
-            </div>
+          
 
             <!-- Main Content -->
-            <div class="col-md-7">
+            <div class="blog-container">
                 <!-- Display Comments -->
                 <div class="container mt-3">
                     <h4></h4>
@@ -129,11 +110,7 @@
             </div>
 
             <!-- Right Side Panel -->
-            <div class="col-md-3 custom-panel custom-panel-right">
-                <!-- Add your right side panel content here -->
-                <h4></h4>
-                <!-- Add whatever content you want in the right side panel -->
-            </div>
+            
         </div>
     </div>
 

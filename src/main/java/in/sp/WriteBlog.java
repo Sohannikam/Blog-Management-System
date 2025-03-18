@@ -72,8 +72,11 @@ public class WriteBlog extends HttpServlet {
             int rowcount= pstmt.executeUpdate();
             if(rowcount>0)
             {
-            	
+            	  
+                  
             	out.println("<script>alert('Blog Created Succesfully'); window.location.href='index.jsp';</script>");
+            	
+          
          	  
             }
            
